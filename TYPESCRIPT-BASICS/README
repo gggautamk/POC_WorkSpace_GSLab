@@ -1,0 +1,5 @@
+This project has independent ts files covering the core concepts of typescript . 
+To run these - we need to execute them independently
+
+Compile - tsc <<file_name>>.ts
+Run - node <<file_name>>.js
