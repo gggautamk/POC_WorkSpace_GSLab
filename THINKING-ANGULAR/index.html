@@ -1,0 +1,47 @@
+<html ng-app="myapp">
+
+<head>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="demo.js"></script>
+</head>
+
+<body>
+    <div ng-controller="MainCtrl">
+        <h1>Hello There</h1>
+        <p ng-if="hourOfDay < 12">Good Morning</p>
+        <p ng-if="hourOfDay > 12">Good Evening</p>
+        <p> <input type="button" ng-click="onButtonChange()">Update Time</input> </p>
+        <p> <input type="text" ng-change="onInputChange()" ng-model="inputText"></p>
+        <p>Hour of Day is : {{hourOfDay}}</p>
+        <br />
+        <br />
+        <u>dd/MM/yyyy format</u><br /><span>{{CurrentDate | date:'dd/MM/yyyy'}}</span>
+        <br />
+        <br />
+        <u>dd, MMMM yyyy format</u><br /><span>{{CurrentDate | date:'dd, MMMM yyyy'}}</span>
+        <br />
+        <br />
+        <u>24 Hour time</u><br /><span>{{CurrentDate | date:'HH:mm:ss'}}</span>
+        <br />
+        <br />
+        <u>12 Hour time</u><br /><span>{{CurrentDate | date:'hh:mm:ss a'}}</span>
+    </div>
+
+    <div ng-controller="NewCtrl as c1">
+        <p ng-bind="c1.tempVal"></p>
+        <div ng-controller="NewInnerCtrl as c2">
+            <p ng-bind="c2.tempVal"></p>
+        </div>    
+    </div>
+
+    <div ng-controller="DemoCtrl as c10">
+        <div ng-repeat="i in c10.myList">
+            <p ng-bind="i.name"></p>
+            <p ng-bind="i.age"></p>
+        </div>    
+    </div>
+
+</body>
+
+</html>
